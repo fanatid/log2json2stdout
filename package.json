@@ -1,6 +1,6 @@
 {
   "name": "log2json2stdout",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Stupid logger, just JSON to STDOUT",
   "keywords": [
     "logger",
