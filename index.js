@@ -1,4 +1,5 @@
 const { EOL } = require('os')
+const chalk = require('chalk')
 
 function logger (level, origin) {
   const logObj = { timestamp: new Date().toISOString(), level }
@@ -15,7 +16,23 @@ function logger (level, origin) {
     }
   }
 
-  process.stdout.write(JSON.stringify(logObj) + EOL)
+  if (process.stdout.isTTY) logger.tty(logObj)
+  else process.stdout.write(JSON.stringify(logObj) + EOL)
+}
+
+logger.tty = (obj) => {
+  const { timestamp, level, message, ...rest } = obj
+  const levelColored = level === 'info' ? chalk.green('info') : chalk.red('error')
+
+  const msgItems = []
+  if (message !== undefined) msgItems.push(message)
+  if (level === 'error' && rest.stack !== undefined) {
+    msgItems.push(rest.stack)
+    delete rest.stack
+  }
+  if (Object.keys(rest).length > 0) msgItems.push(JSON.stringify(rest))
+
+  process.stdout.write(`${timestamp} ${levelColored}: ${msgItems.join(EOL)}` + EOL)
 }
 
 logger.info = (obj) => logger('info', obj)

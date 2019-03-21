@@ -6,14 +6,21 @@ test('json2stdout', (t) => {
   const stdoutWrite = process.stdout.write
   const wrap = (fn) => (t) => {
     let output = ''
+
+    process.stdout.isTTY = false
     process.stdout.write = (t) => { output += t }
+    const rollback = () => {
+      process.stdout.isTTY = true
+      process.stdout.write = stdoutWrite
+    }
+
     try {
       fn(t, () => {
-        process.stdout.write = stdoutWrite
+        rollback()
         return output
       })
     } finally {
-      process.stdout.write = stdoutWrite
+      rollback()
     }
   }
 

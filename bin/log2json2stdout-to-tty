@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+const readline = require('readline')
+const logger = require('../')
+
+const rl = readline.createInterface({ input: process.stdin })
+rl.on('line', (line) => {
+  if (!line.startsWith('{"timestamp"')) {
+    console.log(line)
+    return
+  }
+
+  logger.tty(JSON.parse(line))
+})
