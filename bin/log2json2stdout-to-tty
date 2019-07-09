@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const readline = require('readline')
-const logger = require('../')
+const logger = require('../lib')
 
 const rl = readline.createInterface({ input: process.stdin })
 rl.on('line', (line) => {

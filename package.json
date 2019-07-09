@@ -15,9 +15,9 @@
   ],
   "files": [
     "bin",
-    "index.js"
+    "lib"
   ],
-  "main": "./index.js",
+  "main": "./lib/index.js",
   "bin": {
     "log2json2stdout-to-tty": "./bin/log2json2stdout-to-tty"
   },

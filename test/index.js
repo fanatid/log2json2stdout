@@ -1,6 +1,6 @@
 const test = require('tape')
 const { EOL } = require('os')
-const logger = require('../')
+const logger = require('../lib')
 
 test('json2stdout', (t) => {
   const stdoutWrite = process.stdout.write
