@@ -50,6 +50,4 @@ const err = new Error('world')
 logger.error({ message: err.message, stack: err.stack })
 ```
 
-## LICENSE
-
-This library is free and open-source software released under the MIT license.
+## LICENSE [MIT](LICENSE)
