@@ -1,7 +1,7 @@
 {
   "name": "log2json2stdout",
   "version": "0.1.1",
-  "description": "Stupid logger, just JSON to STDOUT",
+  "description": "Logs? JSON to STDOUT!",
   "keywords": [
     "logger",
     "logs"
@@ -19,7 +19,7 @@
   ],
   "main": "./lib/index.js",
   "bin": {
-    "log2json2stdout-to-tty": "./bin/log2json2stdout-to-tty"
+    "log2json2stdout2tty": "./bin/log2json2stdout2tty"
   },
   "repository": {
     "type": "git",

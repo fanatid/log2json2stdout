@@ -29,7 +29,7 @@ Error: world
     at Function.Module._load (internal/modules/cjs/loader.js:598:3)
     at Function.Module.runMain (internal/modules/cjs/loader.js:862:12)
     at internal/main/run_main_module.js:21:11
-$ node ./test.js | log2json2stdout-to-tty
+$ node ./test.js | log2json2stdout2tty
 2019-03-21T17:03:30.838Z info: hello
 2019-03-21T17:03:30.840Z error: world
 Error: world
