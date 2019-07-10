@@ -1,5 +1,5 @@
-const test = require('tape')
 const { EOL } = require('os')
+const test = require('tape')
 const logger = require('../lib')
 
 test('json2stdout', (t) => {
@@ -24,7 +24,7 @@ test('json2stdout', (t) => {
     }
   }
 
-  t.test('?', wrap((t, getOutput) => {
+  t.test('simple', wrap((t, getOutput) => {
     logger.info('hello')
     logger('error', { x: 42, message: 'world' })
 
