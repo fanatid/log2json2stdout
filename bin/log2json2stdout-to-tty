@@ -1,13 +1,16 @@
 #!/usr/bin/env node
+const { EOL } = require('os')
 const readline = require('readline')
 const logger = require('../lib')
 
 const rl = readline.createInterface({ input: process.stdin })
 rl.on('line', (line) => {
-  if (!line.startsWith('{"timestamp"')) {
-    console.log(line)
-    return
-  }
+  try {
+    if (line.startsWith('{"timestamp"')) {
+      logger.tty(JSON.parse(line))
+      return
+    }
+  } catch (err) {}
 
-  logger.tty(JSON.parse(line))
+  process.stdout.write(line + EOL)
 })
