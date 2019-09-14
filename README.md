@@ -1,3 +1,5 @@
+# PROJECT ARCHIVED, PLEAUSE USE [pino](https://github.com/pinojs/pino)
+
 # log2json2stdout
 
 [![Build Status](https://img.shields.io/travis/fanatid/log2json2stdout.svg?branch=master&style=flat-square)](https://travis-ci.org/fanatid/log2json2stdout)
